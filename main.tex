@@ -1,0 +1,112 @@
+\documentclass[report,10.5pt,oneside,openany,a4paper]{jsbook}
+\pagenumbering{arabic}
+
+\usepackage[top=30truemm, bottom=30truemm, left=30truemm, right=20truemm]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage{url}
+\usepackage{times}
+
+\usepackage{titlesec}
+\usepackage{picture}
+\usepackage[dvipdfmx]{color}
+\usepackage[cc]{titlepic}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+
+\usepackage{afterpage}
+
+% colors
+\definecolor{teal}{RGB}{0,128,128}
+\definecolor{powderblue}{RGB}{176,224,230}
+\definecolor{darkslateblue}{RGB}{72,61,139}
+\definecolor{darkslategray}{RGB}{47,79,79}
+\definecolor{lightcyan}{RGB}{224,255,255}
+
+% chapter
+\titleformat{\chapter}[block]{\bfseries\Huge}{第 \thechapter 章}{0.5em}{}
+\titlespacing{\chapter}{0pt}{0pt}{24pt}
+
+% section
+\titleformat{\section}[block]{\bfseries\huge}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{24pt}{12pt}
+
+% subsection
+\titleformat{\subsection}[block]{\bfseries\Large}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0pt}{24pt}{12pt}
+
+\makeindex
+
+\setlength{\baselineskip}{18pt}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.55in}
+
+\begin{document}
+
+%タイトル開始
+
+\begin{titlepage}
+  \begin{center}
+  \vspace*{50truept}
+  {\Huge ブルーベリー栽培支援de}\\ % タイトル
+  \vspace{10truept}
+  % {\Large }\\ % サブタイトル
+  \vspace{20truept}
+  {\Huge  江﨑郁磨\ }\\ % 名前
+  \vspace{10truept}
+  {\Large Esaki Ikuma}\\ %ローマ字名
+  \vspace{20truept}
+  {\normalsize (20xx年度入学, xxxxxxxx)}\\ % 学籍番号
+  \vspace{40truept}
+  \vspace{40truept}
+  {\huge 指導教員: 清水郁子 准教授 \ }\\ % 指導教員名
+  \vspace{10truept}
+  {\normalsize 東京農工大学 工学部 知能情報工学科}\\
+  \vspace{10truept}
+  {\normalsize 20xx 年度卒業論文}\\
+  \vspace{10truept}
+  {\normalsize (20xx年 x月 xx日 提出)}\\ % 提出日
+  \end{center}
+\end{titlepage}
+
+\begin{titlepage}
+  \include{abstract}
+\end{titlepage}
+
+%タイトル終わり
+\frontmatter
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+\mainmatter
+
+
+\include{chap1}
+\include{chap2}
+
+\include{acknowledgement}
+
+\appendix
+\include{appendix1}
+
+\include{biblography}
+
+
+\newpage
+\printindex
+
+\end{document}
