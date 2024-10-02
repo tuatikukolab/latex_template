@@ -36,4 +36,3 @@ BibTex のリンクを辿ると, 次のようなことが書かれたページ�
 - [CVF Open Access](https://openaccess.thecvf.com/menu): CVPR, WACV, ICCV
 - [NeurIPS Proceedings](https://papers.nips.cc/): NeurIPS（元々は NIPS でした. ただ, nips は教育上よろしくないという理由で今の表現になっているそうです）
 - [PMLR](https://proceedings.mlr.press/): ICML など
-- ECCV や AAAI?
