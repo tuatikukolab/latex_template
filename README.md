@@ -45,28 +45,28 @@ VSCodeが必要です．[こちら](https://code.visualstudio.com/)からイン�
 はじめに，Docker Desktop on Windowsがダウンロードされており，sign upされていることを確認してください．
 
 次に，コマンドプロンプトを起動し，以下のコマンドを入力してください．
-"""
+```
 docker pull ghcr.io/being24/latex-docker:latest
-"""
+```
 
 docker imageのpullが終わったら，次のコマンドを入力してください．
-"""
+```
 docker images
-"""
+```
 
-レポジトリの欄に'ghcr.io/being24/latex-docker'があれば，成功しています．
+レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．
 
 # clone the templete
 
 はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
-"""
+```
 cd ダウンロードしたいところ
-"""
+```
 
 次に，以下のコマンドを入力してください．
-"""
+```
 git clone https://github.com/tuatikukolab/latex_template.git
-"""
+```
 途中でログインを求められるので，ログインしてください．
 done.が出てきたら，成功しています．
 
