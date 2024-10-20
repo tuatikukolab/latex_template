@@ -1,38 +1,86 @@
-# 日本語論文をLaTeXで書いて、textlintをするためのテンプレート
+# LaTeXで論文を書くためのテンプレート
 
 [![Test Docker Image](https://github.com/being24/latex-template-ja/actions/workflows/test.yml/badge.svg)](https://github.com/being24/latex-template-ja/actions/workflows/test.yml)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
+このLaTeXテンプレートは，[こちら](https://github.com/being24/latex-template-ja)のテンプレートを参考に，本研究室向けに内容を改良したものです．
 
-## 機能
+## Release note
+
+* 2024/10/20 readme.mdを変更
+
+## Function
 
 * 個人環境にLaTeX workshopを構築せず、dockerでビルドします
 * GitHub Actionsを使用してtextlintを実行します
 * github上にreleaseします
 * レジュメや論文用のテンプレートを持ちますが、あくまで個人の環境用に構築したものです
 
-## 環境
+## Environment
 
 * Windows 10 or later
 * macOS 10.14 or later
 * Ubuntu 18.04 LTS or later
 
-Docker環境が必要ですが、clsファイルについては多少弄ればCloud LaTeX等でも使用できます
+Docker環境が必要です．
 
 * Docker Desktop for Mac 2.1 or later
 * Docker 18.06 or later
 * Docker Desktop for Windows
 
-ghcr.io/being24/latex-docker を使用します  
+windowsの場合は，[こちら](https://docs.docker.com/desktop/install/windows-install/)からDocker Desktop on Windowsをインストールしておいてください．
+
+VSCodeが必要です．[こちら](https://code.visualstudio.com/)からインストールしておいてください．
+
+また，ghcr.io/being24/latex-docker を使用します．詳しくはあとで説明します
 ビルド用のdocker imageは[こちらのリポジトリ](https://github.com/being24/latex-docker)を参照してください
 
-また、VSCodeが必要です
 
-![demo](example/figures/screenshot.png)
+## How to use
 
-## 使い方
+ここでは，windowsを例として説明します．
 
-使い方やFAQはこの[記事](https://zenn.dev/being/articles/how-to-use-my-latex)にまとめています
+# pull the docker image
+
+はじめに，Docker Desktop on Windowsがダウンロードされており，sign upされていることを確認してください．
+
+次に，コマンドプロンプトを起動し，以下のコマンドを入力してください．
+"""
+docker pull ghcr.io/being24/latex-docker:latest
+"""
+
+docker imageのpullが終わったら，次のコマンドを入力してください．
+"""
+docker images
+"""
+
+レポジトリの欄に'ghcr.io/being24/latex-docker'があれば，成功しています．
+
+# clone the templete
+
+はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
+"""
+cd ダウンロードしたいところ
+"""
+
+次に，以下のコマンドを入力してください．
+"""
+git clone https://github.com/tuatikukolab/latex_template.git
+"""
+途中でログインを求められるので，ログインしてください．
+done.が出てきたら，成功しています．
+
+# use the templete
+
+はじめに，vscodeを開き'Open Folder...'から先ほどダウンロードしたフォルダを開いてください．
+このとき，拡張機能のインストール画面やバナーが出てきた場合はいったん全てインストールしてください．
+また，左側の「Extensions」アイコンをクリックし，'LaTeX workshop'および'Remote Development'を検索してインストールしてください．
+
+次に，左側の「LaTeX」アイコンをクリックし，COMMANDSから「Build LaTeX project」→「Recipe: compile」の順にクリックしてください．
+
+最後に，「View LeTeX PDF」をクリックしてください．pdfファイルが出力されたら，成功しています．
+
+（参考：元記事は[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)です）
 
 ## License
 
