@@ -7,7 +7,7 @@
 
 ## Release note
 
-* 2024/10/20 readme.mdを変更
+* 2024/10/21 readme.mdを変更
 
 ## Function
 
@@ -40,9 +40,9 @@ VSCodeが必要です．[こちら](https://code.visualstudio.com/)からイン�
 
 ここでは，windowsを例として説明します．
 
-# pull the docker image
+### pull the docker image
 
-はじめに，Docker Desktop on Windowsがダウンロードされており，sign upされていることを確認してください．
+はじめに，Docker Desktop on Windowsがダウンロードされており，新規登録済みであることを確認してください．
 
 次に，コマンドプロンプトを起動し，以下のコマンドを入力してください．
 ```
@@ -56,12 +56,9 @@ docker images
 
 レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．
 
-# clone the templete
+### clone the templete
 
 はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
-```
-cd ダウンロードしたいところ
-```
 
 次に，以下のコマンドを入力してください．
 ```
@@ -70,21 +67,17 @@ git clone https://github.com/tuatikukolab/latex_template.git
 途中でログインを求められるので，ログインしてください．
 done.が出てきたら，成功しています．
 
-# use the templete
+### use the templete
 
 はじめに，vscodeを開き'Open Folder...'から先ほどダウンロードしたフォルダを開いてください．
 このとき，拡張機能のインストール画面やバナーが出てきた場合はいったん全てインストールしてください．
-また，左側の「Extensions」アイコンをクリックし，'LaTeX workshop'および'Remote Development'を検索してインストールしてください．
+また，もしインストール済みでなければ，左側の「Extensions」アイコンから**LaTeX workshop**および**Remote Development**を検索してインストールしてください．
 
 次に，左側の「LaTeX」アイコンをクリックし，COMMANDSから「Build LaTeX project」→「Recipe: compile」の順にクリックしてください．
 
 最後に，「View LeTeX PDF」をクリックしてください．pdfファイルが出力されたら，成功しています．
 
 （参考：元記事は[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)です）
-
-## License
-
-CC0
 
 ## Author
 

@@ -1,12 +1,11 @@
-\chapter{先行研究}
-\label{sec:RecentWorks}
+\chapter{先行研究}\label{sec:RecentWorks}
 
 研究の背景でもある Vision Transformer (ViT) \cite{Dosovitskiy_2021} は,
 画像のクラス分類問題解決のために実装されたモデルである. 
 モデルの設計は図 \ref{fig:vit_design} に示すとおりであり, 
 Transformer Encoder \cite{Vaswani_2017} に BERT \cite{Devlin_2019} を適用した
 ``Transformer'' に加えて, 画像のトークン化を行う ``Tokenizer'' を構成要素に持つ. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \includegraphics[keepaspectratio, width=75mm]{figure/vit_design.png}
   \caption{Vision Transformer の構成}
