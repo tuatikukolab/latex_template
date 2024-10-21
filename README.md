@@ -7,14 +7,14 @@
 
 ## Release note
 
-* 2024/10/21 readme.mdを変更
+* 2024/10/21 各種TeXファイルを作成
 
 ## Function
 
 * 個人環境にLaTeX workshopを構築せず、dockerでビルドします
 * GitHub Actionsを使用してtextlintを実行します
 * github上にreleaseします
-* レジュメや論文用のテンプレートを持ちますが、あくまで個人の環境用に構築したものです
+* 論文のテンプレートを持ちます
 
 ## Environment
 
@@ -38,9 +38,9 @@ VSCodeが必要です．[こちら](https://code.visualstudio.com/)からイン�
 
 ## How to use
 
-ここでは，windowsを例として説明します．
+ここでは，windowsを例として[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)の元記事を参考にもう少し詳しく説明します．
 
-### pull the docker image
+### Pull the docker image
 
 はじめに，Docker Desktop on Windowsがダウンロードされており，新規登録済みであることを確認してください．
 
@@ -56,7 +56,7 @@ docker images
 
 レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．
 
-### clone the templete
+### Clone the templete
 
 はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
 
@@ -67,7 +67,7 @@ git clone https://github.com/tuatikukolab/latex_template.git
 途中でログインを求められるので，ログインしてください．
 done.が出てきたら，成功しています．
 
-### use the templete
+### Use the template
 
 はじめに，vscodeを開き'Open Folder...'から先ほどダウンロードしたフォルダを開いてください．
 このとき，拡張機能のインストール画面やバナーが出てきた場合はいったん全てインストールしてください．
@@ -77,39 +77,19 @@ done.が出てきたら，成功しています．
 
 最後に，「View LeTeX PDF」をクリックしてください．pdfファイルが出力されたら，成功しています．
 
-（参考：元記事は[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)です）
+## Config
 
-## Author
+`.vscode/settings.json`は，[こちら](https://github.com/being24/latex-template-ja)のテンプレートにあったものを引用しています．
+VSCodeはこの設定を自動で読み込むため，設定を変更する必要は無いそうです．
 
-Being
+## About the template
 
-## config
+先輩から代々受け継がれているテンプレートをもとに，体裁を整えたものを載せています．1章ではTeXの使用経験があまりない学生を対象に初歩的な使用法をまとめています．誤りがあった場合や，新たに加えてほしい内容がありましたら教えていただけると幸いです．  
+実際の使用時は，1章に載せた使用法は消してください．
 
-VSCode上での設定例は[settings.json](.vscode/settings.json)を参照してください
-
-## テンプレートについて
-
-できるだけ現代的な設定を意識して作成したテンプレートですが、LaTeXに詳しいわけではないので誤りがあった場合は教えていただけると幸いです  
-実際の使用時はexample等必要のないファイルは消してください
-
-jlistingの代わりにmintedを使用し、参考文献はbiblatexを使用します
-(mintedは環境によっては使用できないため、コメントアウトしてあります)
-
-### resume.cls
-
-[resume.cls](/classes/resume.cls)は2段組みのレジュメを作成するためのクラスファイルです  
-使用方法は[例](/example/tex/resume_template.tex)を参照してください
-
-### report.cls
-
-[report.cls](/classes/report.cls)は論文を作成するためのクラスファイルです  
-使用方法は[例](/example/tex/report_template.tex)を参照してください
-
-### .vscode/settings.jsonについて
-
-使用しやすい設定を参考程度ですが上げておきます。  
-VSCodeであればこの設定を読み込んでくれるため、設定を変更する必要はありません
+また，コンパイルの際にデフォルトで2点のcautionが出ます(caption.styおよびmain.tex)が，気にしないでください．
 
 ## 参考URL
 
+<https://github.com/being24/latex-template-ja>
 <https://poyo.hatenablog.jp/entry/2020/12/05/110000>
