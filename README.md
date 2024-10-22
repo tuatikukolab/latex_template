@@ -1,116 +1,74 @@
-# LaTeXで論文を書くためのテンプレート
+# 日本語論文をLaTeXで書いて、textlintをするためのテンプレート
 
 [![Test Docker Image](https://github.com/being24/latex-template-ja/actions/workflows/test.yml/badge.svg)](https://github.com/being24/latex-template-ja/actions/workflows/test.yml)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-このLaTeXテンプレートは，[こちら](https://github.com/being24/latex-template-ja)のテンプレートを参考に，本研究室向けに内容を改良したものです．
 
-## Release note
-
-* 2024/10/22 README.mdを増強，トラブルシューティング
-* 2024/10/21 各種TeXファイルを作成
-
-## Function
+## 機能
 
 * 個人環境にLaTeX workshopを構築せず、dockerでビルドします
 * GitHub Actionsを使用してtextlintを実行します
 * github上にreleaseします
-* 論文のテンプレートを持ちます
+* レジュメや論文用のテンプレートを持ちますが、あくまで個人の環境用に構築したものです
 
-## Environment
+## 環境
 
 * Windows 10 or later
 * macOS 10.14 or later
 * Ubuntu 18.04 LTS or later
 
-Docker環境が必要です．
+Docker環境が必要ですが、clsファイルについては多少弄ればCloud LaTeX等でも使用できます
 
 * Docker Desktop for Mac 2.1 or later
 * Docker 18.06 or later
 * Docker Desktop for Windows
 
-windowsの場合は，[こちら](https://docs.docker.com/desktop/install/windows-install/)からDocker Desktop on Windowsをインストールしておいてください．環境変数PATHが正しく設定されていることを確認してください．確認するためには，コマンドプロンプトを開いて
-```
-docker
-```
-と入力します．コマンドの説明が出てきたらインストールできています．
-あとで[こちらのリポジトリ](https://github.com/being24/latex-docker)のghcr.io/being24/latex-docker を使用します．詳しくは後ほど説明します．
+ghcr.io/being24/latex-docker を使用します  
+ビルド用のdocker imageは[こちらのリポジトリ](https://github.com/being24/latex-docker)を参照してください
 
-VSCodeが必要です．[こちら](https://code.visualstudio.com/)からインストールしておいてください．
+また、VSCodeが必要です
 
-Gitも必要です．[こちら](https://git-scm.com/downloads)からインストールしておいてください．環境変数PATHが正しく設定されていることを確認してください．確認するためには，コマンドプロンプトを開いて
-```
-git
-```
-と入力します．コマンドの説明が出てきたらインストールできています．
+![demo](example/figures/screenshot.png)
 
-## How to use
+## 使い方
 
-ここでは，windowsを例としてdocker imageの入手からテンプレートの出力までを[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)の元記事を参考にもう少し詳しく説明します．Ubuntu版は作成中です．
+使い方やFAQはこの[記事](https://zenn.dev/being/articles/how-to-use-my-latex)にまとめています
 
-### Pull the docker image
+## License
 
-Docker Desktop on Windowsがダウンロードされており，新規登録済みであることを確認してください．
+CC0
 
-はじめに，コマンドプロンプトを起動し，以下のコマンドを入力してください．
-```
-docker pull ghcr.io/being24/latex-docker:latest
-```
+## Author
 
-(ハードウェア側で仮想環境を使えない設定にしている場合，上手くpullできないそうです．その場合は，BIOSから仮想環境の設定をenableにしてください．使っているPCによってBIOSの設定画面は異なるので，ネット等で調べてください)
+Being
 
-次に，以下のコマンドを入力してください．
-```
-docker images
-```
+## config
 
-レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．
+VSCode上での設定例は[settings.json](.vscode/settings.json)を参照してください
 
-### Clone the templete
+## テンプレートについて
 
-Gitがインストール済みであり，環境変数PATHが正しく通っていることを確認してください．
+できるだけ現代的な設定を意識して作成したテンプレートですが、LaTeXに詳しいわけではないので誤りがあった場合は教えていただけると幸いです  
+実際の使用時はexample等必要のないファイルは消してください
 
-はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
+jlistingの代わりにmintedを使用し、参考文献はbiblatexを使用します
+(mintedは環境によっては使用できないため、コメントアウトしてあります)
 
-次に，以下のコマンドを入力してください．
-```
-git clone https://github.com/tuatikukolab/latex_template.git
-```
-途中でログインを求められるので，ログインしてください．
-done.が出てきたら，成功しています．
+### resume.cls
 
-### Use the template
+[resume.cls](/classes/resume.cls)は2段組みのレジュメを作成するためのクラスファイルです  
+使用方法は[例](/example/tex/resume_template.tex)を参照してください
 
-はじめに，vscodeを開きFlie->Open Folder...から先ほどダウンロードしたフォルダを開いてください．
-このとき，拡張機能のインストール画面やバナーが出てきた場合はいったん全てインストールしてください．
-また，もしインストール済みでなければ，左側の「Extensions」アイコンから**LaTeX workshop**および**Remote Development**を検索してインストールしてください．
-(LaTeX workshopはふたつあるそうです．James Yuさんが作成した方をインストールしてください．)
+### report.cls
 
-次に，左側のメニューから「TeX」アイコンをクリックし，COMMANDSから「Build LaTeX project」→「Recipe: compile」の順にクリックしてTeXファイルのコンパイルをしてください．
-TeXファイルを表示している場合はウィンドウ右上の緑の矢印をクリックしても同様にコンパイルできます．
+[report.cls](/classes/report.cls)は論文を作成するためのクラスファイルです  
+使用方法は[例](/example/tex/report_template.tex)を参照してください
 
-最後に，COMMANDSから「View LeTeX PDF」をクリックしてください．pdfファイルが出力されたら，成功しています．
+### .vscode/settings.jsonについて
 
-## Config
-
-`.vscode/settings.json`は，[こちら](https://github.com/being24/latex-template-ja)のテンプレートにあったものを引用しています．
-VSCodeはこの設定を自動で読み込むため，設定を変更する必要は無いそうです．
-
-## About the template
-
-先輩から代々受け継がれているテンプレートをもとに，体裁を整えたものを載せています．1章ではLaTeXの使用経験があまりない学生を対象に初歩的な使用法をまとめています．誤りがあった場合や，新たに加えてほしい内容がありましたら教えていただけると幸いです．  
-実際の使用時は，1章に載せた使用法は消してください．
-
-また，コンパイルの際にデフォルトで2点のcautionが出ます(caption.styおよびmain.tex)が，気にしないでください．
-
-## Contact
-
-dockerやgithubまわりのエラーは，斎藤雅史君か江﨑郁磨君に聞いてください．
-
-LaTeXまわりのエラーは穂苅彩音(hokaria.tuat@gmail.com)に聞いてください．
+使用しやすい設定を参考程度ですが上げておきます。  
+VSCodeであればこの設定を読み込んでくれるため、設定を変更する必要はありません
 
 ## 参考URL
-
-<https://github.com/being24/latex-template-ja>
 
 <https://poyo.hatenablog.jp/entry/2020/12/05/110000>
