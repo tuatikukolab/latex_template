@@ -7,7 +7,7 @@
 
 ## Release note
 
-* 2024/10/22 README.mdを増強
+* 2024/10/22 README.mdを増強，トラブルシューティング
 * 2024/10/21 各種TeXファイルを作成
 
 ## Function
@@ -31,22 +31,22 @@ Docker環境が必要です．
 
 windowsの場合は，[こちら](https://docs.docker.com/desktop/install/windows-install/)からDocker Desktop on Windowsをインストールしておいてください．環境変数PATHが正しく設定されていることを確認してください．確認するためには，コマンドプロンプトを開いて
 ```
-where docker
+docker
 ```
-と入力します．
+と入力します．コマンドの説明が出てきたらインストールできています．
 あとで[こちらのリポジトリ](https://github.com/being24/latex-docker)のghcr.io/being24/latex-docker を使用します．詳しくは後ほど説明します．
 
 VSCodeが必要です．[こちら](https://code.visualstudio.com/)からインストールしておいてください．
 
 Gitも必要です．[こちら](https://git-scm.com/downloads)からインストールしておいてください．環境変数PATHが正しく設定されていることを確認してください．確認するためには，コマンドプロンプトを開いて
 ```
-where git
+git
 ```
-と入力します．
+と入力します．コマンドの説明が出てきたらインストールできています．
 
 ## How to use
 
-ここでは，windowsを例としてdocker imageの入手からテンプレートの出力までを[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)の元記事を参考にもう少し詳しく説明します．
+ここでは，windowsを例としてdocker imageの入手からテンプレートの出力までを[こちら](https://zenn.dev/being/articles/how-to-use-my-latex)の元記事を参考にもう少し詳しく説明します．Ubuntu版は作成中です．
 
 ### Pull the docker image
 
