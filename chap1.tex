@@ -14,8 +14,6 @@
     \item その他エラーが発生している．画面下部の「PROBLEMS」を確認し，対処する．また，まれに「PROBLEMS」には詳細なエラー内容が表示されないことがある．その場合は隣の「OUTPUT」を確認する．
 \end{itemize}
 
-なお，Dockerコンテナに正しく入れているときは，VSCodeの画面の上部に\texttt{workdir [Dev Container: LaTeX @ desktop-linux]}と表示されているはずである(環境によって少し異なるかもしれない)．
-
 %%%% 項が変わるときには%を入れると可読性が増す
 \subsection{改行}\label{sec:改行}
 改行したい場合は，ただ改行するのではなく，一行空ける．日本語の文章の場合は，段落の最初の１文字分が字下げされる．\\
@@ -50,7 +48,7 @@ verbatim*ブロック内では，改行や空白 がそのまま出力される
 章(chaper)，節(section)，項(subsection)，目(subsubsection)には自動的に番号がつけられる．
 別の章を引用する場合は，第2章，第3章，・・・と直接書くのではなく，ラベルを使って第\ref{sec:Introduction}章，第\ref{sec:RecentWorks}章，・・・と引用する．ラベルを使う場合は，一般には2回コンパイル(緑の矢印を押してbuildすること)しないと正しく反映されないので注意する．
 
-また，参考文献を引用したい場合は，biblography.texに引用元が記述されていることを確認し，次\cite{Krizhevsky_2012}のように引用する．
+また，参考文献を引用したい場合は，references.bibに引用元が記述されていることを確認し，次\cite{ref:mnih2013playing}のように引用する．
 
 %%%%
 \subsection{箇条書き}\label{sec:箇条書き}

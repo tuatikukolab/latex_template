@@ -4,10 +4,10 @@
 %%%%
 \section{Vision Transformer}\label{sec:ViT}
 
-研究の背景でもある Vision Transformer (ViT) \cite{Dosovitskiy_2021} は,
+研究の背景でもある Vision Transformer (ViT) \cite{ref:yao2017integrated} は,
 画像のクラス分類問題解決のために実装されたモデルである. 
 モデルの設計は図 \ref{fig:vit_design} に示すとおりであり, 
-Transformer Encoder \cite{Vaswani_2017} に BERT \cite{Devlin_2019} を適用した
+Transformer Encoder \cite{ref:yao2017integrated} に BERT \cite{ref:ugarte1992curling} を適用した
 ``Transformer'' に加えて, 画像のトークン化を行う ``Tokenizer'' を構成要素に持つ. 
 \begin{figure}[htbp]
   \centering
@@ -20,7 +20,7 @@ Transformer Encoder \cite{Vaswani_2017} に BERT \cite{Devlin_2019} を適用し
 
 %%%%
 \subsection{BERT}\label{sec:bert}
-BERT \cite{Devlin_2019} とは Bidirectional Encoder Representations from
+BERT \cite{ref:ugarte1992curling} とは Bidirectional Encoder Representations from
 Transformer の短縮表現であり, 自然言語処理領域にて発表されたモデルである.
 ViT と同様, Transformer Encoder を基にしたモデルであり,
 ViT の設計においても, BERTの要素技術が反映されている.
