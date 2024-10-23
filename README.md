@@ -50,7 +50,7 @@ git
 
 ### Pull the docker image
 
-Docker Desktop on Windowsがダウンロードされており，新規登録済みであることを確認してください．
+Docker Desktop on Windowsがダウンロードされており，起動＆新規登録済みであることを確認してください．
 
 はじめに，コマンドプロンプトを起動し，以下のコマンドを入力してください．
 ```
@@ -64,20 +64,39 @@ docker pull ghcr.io/being24/latex-docker:latest
 docker images
 ```
 
-レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．
+レポジトリの欄に`ghcr.io/being24/latex-docker`があれば，成功しています．コマンドプロンプトは起動したままにしておいてください．
 
-### Clone the templete
+### Create new repository
 
 Gitがインストール済みであり，環境変数PATHが正しく通っていることを確認してください．
 
-はじめに，コマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
+はじめに，[こちら](https://github.com/tuatikukolab/latex_template)を開きます．
 
-次に，以下のコマンドを入力してください．
+次に，右上にある`Use this templete`から，`Create new repository`を選択します．これにより，論文のテンプレートを丸ごとコピーした自分のリポジトリを作成できます．
+
+設定は下の画像を参考にしてください．
+
+![newrepo](https://github.com/user-attachments/assets/d45612aa-9861-4540-9af5-7a8d935f03eb)
+
+最後に`Create repository`をクリックしてください．今後はこのリポジトリを使ってcloneおよび編集を行います．
+
+### Clone the templete
+
+はじめに，先ほど作成した自分のリポジトリの右上にある`<> Code`をクリックし，表示されているURLをコピーしてください．
+
+![clonerepo](https://github.com/user-attachments/assets/8041c4db-edc1-4ed7-9a3d-623f300ec0f3)
+
+次に，先ほど起動したままにしておいたコマンドプロンプトを使って，LaTeXのテンプレートをダウンロードしたいディレクトリに移動してください．
+
+次に，以下のコマンドを入力してください(<>の部分は適宜書き換えてください．<>は入力する必要ありません)．
 ```
-git clone https://github.com/tuatikukolab/latex_template.git
+git clone <ここにGithubからコピーしたURL>
 ```
 途中でログインを求められるので，ログインしてください．
 done.が出てきたら，成功しています．
+(Ubuntuの場合，httpsではcloneできないそうです．sshを使用してください．)
+
+また，gitを使うことで複数のコンピュータでの論文執筆が可能になります(めちゃくちゃ使いやすいGoogle Driveのイメージです)．[こちら](how_to_use_git.md)にgitのコマンドの使い方をまとめたので参考にしてください．
 
 ### Use the template
 
@@ -90,6 +109,10 @@ done.が出てきたら，成功しています．
 TeXファイルを表示している場合はウィンドウ右上の緑の矢印をクリックしても同様にコンパイルできます．
 
 最後に，COMMANDSから「View LeTeX PDF」をクリックしてください．pdfファイルが出力されたら，成功しています．
+
+### When start VSCode again
+
+2回目以降に起動する場合は，はじめにDocker desktopを起動してからVSCodeを起動してください．
 
 ## Config
 
